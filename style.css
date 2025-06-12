@@ -91,3 +91,42 @@ footer {
   z-index: -1;
 }
 
+/* 1. Hover on Name */
+h1:hover {
+  color: #38bdf8;
+  text-shadow: 0 0 10px #38bdf8;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* 2. Hover on Links */
+.links a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #38bdf8;
+  transform: scale(1.05);
+}
+
+/* 3. Hover on Skills */
+.skills li {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skills li:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 10px #38bdf8;
+  background-color: #0f172a;
+}
+
+/* 4. Hover on Project Titles */
+.project h3:hover {
+  color: #0ea5e9;
+  text-shadow: 0 0 10px #0ea5e9;
+  transform: scale(1.04);
+  transition: all 0.3s ease;
+}
+
+/* 5. Footer Hover Effect */
+footer:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
