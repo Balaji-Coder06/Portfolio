@@ -130,22 +130,3 @@ footer:hover {
   color: #ffffff;
   transition: all 0.3s ease;
 }
-
-.github-link {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #38bdf8;
-  text-decoration: none;
-  font-weight: bold;
-  border: 1px solid #38bdf8;
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.github-link:hover {
-  background-color: #38bdf8;
-  color: #0f172a;
-  box-shadow: 0 0 10px #38bdf8;
-  transform: scale(1.05);
-}
