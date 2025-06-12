@@ -1,40 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0d1117;
-  color: #c9d1d9;
+  font-family: 'Orbitron', sans-serif;
+  background: url('https://manybackgrounds.com/images/hd/cool-dark-neon-blue-circle-sz6fk2b7hiiyjekx.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #e0e0e0;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
   line-height: 1.6;
 }
 
 header {
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   padding: 2rem 1rem;
-  background-color: #161b22;
+  border-bottom: 1px solid #333;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   margin: 0;
 }
 
 p {
   font-size: 1.1rem;
-  color: #8b949e;
+  color: #9ca3af;
 }
 
 .links a {
-  margin: 0 10px;
-  color: #58a6ff;
-  text-decoration: none;
+  margin: 0 12px;
+  color: #38bdf8;
   font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.links a:hover {
+  color: #ffffff;
 }
 
 .skills, .projects {
   max-width: 800px;
   margin: 2rem auto;
-  padding: 1rem;
-  background-color: #161b22;
+  padding: 1.25rem;
   border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
 }
 
 .skills ul {
@@ -46,28 +57,26 @@ p {
 }
 
 .skills li {
-  background-color: #21262d;
+  background-color: #1e293b;
+  color: #ffffff;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-}
-
-.project {
-  margin-bottom: 1.5rem;
+  box-shadow: 0 0 5px #0ea5e9;
 }
 
 .project h3 {
   margin: 0;
-  color: #58a6ff;
+  color: #7dd3fc;
 }
 
 .project a {
   text-decoration: none;
-  color: #2f81f7;
+  color: #38bdf8;
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #161b22;
-  color: #8b949e;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ccc;
 }
