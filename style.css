@@ -7,9 +7,9 @@ body {
     background: url('https://manybackgrounds.com/images/hd/cool-dark-neon-blue-circle-sz6fk2b7hiiyjekx.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #e0e0e0;
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* Slightly less intense shadow */
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     line-height: 1.6;
-    font-size: 16px; /* Base font size for 'rem' calculations */
+    font-size: 16px;
 }
 
 /* Overlay for background dimming */
@@ -19,43 +19,55 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.65); /* Slightly adjusted opacity */
+    background-color: rgba(0, 0, 0, 0.65);
     z-index: -1;
 }
 
 /* Header Section */
 header {
-    backdrop-filter: blur(8px); /* Slightly more blur */
-    background-color: rgba(0, 0, 0, 0.55); /* Slightly darker */
-    text-align: center;
-    padding: 1.5rem 1rem; /* Slightly reduced padding */
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.55);
+    text-align: center; /* Centers block elements like h1, p, and the links div */
+    padding: 1.5rem 1rem;
     border-bottom: 1px solid #333;
+    /* Removed flex properties from header as we want them to stack naturally */
 }
 
+/* NEW: Remove margins to bring them closer */
 h1 {
-    font-size: 2.2rem; /* Reduced from 2.75rem */
-    margin: 0;
-    margin-bottom: 0.5rem; /* Add some space below the name */
+    font-size: 2.2rem;
+    margin-top: 0;      /* Remove top margin */
+    margin-bottom: 0;   /* Remove bottom margin */
+    line-height: 1.2;   /* Adjust line-height to fine-tune spacing */
 }
 
-header p { /* Targeted header paragraph */
+/* NEW: Remove margins and set max-width */
+header p {
     font-size: 1rem;
     color: #9ca3af;
-    max-width: 600px; /* This is the key line to make it wrap */
-    margin: 0.5rem auto 1.5rem auto; /* Center and add more bottom margin */
+    margin-top: 0;      /* Remove top margin */
+    margin-bottom: 1.5rem; /* Only margin-bottom to create space for links */
+    max-width: 600px; /* Constrain width for better readability on large screens */
+    margin-left: auto;  /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    line-height: 1.2;   /* Adjust line-height to fine-tune spacing */
 }
 
+/* Links Container */
 .links {
-    margin-top: 1rem; /* Space above links */
+    /* Removed margin-top as header p now handles spacing below text */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .links a {
-    margin: 0 10px; /* Slightly reduced margin between links */
+    margin: 0; /* Ensure no external margins on links themselves */
     color: #38bdf8;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 0.95rem; /* Slightly smaller link text */
+    font-size: 0.95rem;
 }
 .links a:hover {
     color: #ffffff;
@@ -63,17 +75,17 @@ header p { /* Targeted header paragraph */
 
 /* Common Section Styles (Skills & Projects) */
 .skills, .projects {
-    max-width: 760px; /* Slightly reduced max-width */
+    max-width: 760px;
     margin: 2rem auto;
-    padding: 1rem; /* Reduced from 1.25rem */
+    padding: 1rem;
     border-radius: 12px;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* Add subtle box shadow */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .skills h2, .projects h2 {
-    font-size: 1.8rem; /* Slightly smaller section headings */
+    font-size: 1.8rem;
     text-align: center;
     margin-bottom: 1.5rem;
     color: #7dd3fc;
@@ -83,121 +95,117 @@ header p { /* Targeted header paragraph */
 /* Skills Section Specifics */
 .skills ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the skill tags */
-    gap: 8px; /* Slightly reduced gap */
+    /* NO flex-wrap: wrap; to keep them on one line */
+    justify-content: center;
+    gap: 8px;
     list-style: none;
     padding: 0;
     margin: 0;
+    overflow-x: auto; /* Allow horizontal scrolling if content overflows */
+    white-space: nowrap; /* Force all list items to stay on one line */
+    padding-bottom: 10px; /* Add some padding if scrollbar appears */
 }
 
 .skills li {
     background-color: #1e293b;
     color: #ffffff;
-    padding: 0.4rem 0.9rem; /* Reduced padding */
+    padding: 0.4rem 0.9rem;
     border-radius: 8px;
-    box-shadow: 0 0 4px #0ea5e9; /* Slightly less intense shadow */
-    font-size: 0.9rem; /* Slightly smaller skill text */
+    box-shadow: 0 0 4px #0ea5e9;
+    font-size: 0.9rem;
+    flex-shrink: 0; /* Prevent items from shrinking */
 }
 
 /* Projects Section Specifics */
 .project {
-    background-color: rgba(15, 23, 42, 0.8); /* Darker background for projects */
-    padding: 1rem; /* Padding for each project box */
+    background-color: rgba(15, 23, 42, 0.8);
+    padding: 1rem;
     border-radius: 10px;
-    margin-bottom: 1.5rem; /* Spacing between projects (replaces <br><br>) */
-    box-shadow: 0 0 8px rgba(56, 189, 248, 0.3); /* Subtle glow for project boxes */
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project:last-child {
-    margin-bottom: 0; /* No margin after the last project */
+    margin-bottom: 0;
 }
 
 .project h3 {
-    margin: 0 0 0.5rem 0; /* Space below title */
+    margin: 0 0 0.5rem 0;
     color: #7dd3fc;
-    font-size: 1.4rem; /* Reduced from original */
+    font-size: 1.4rem;
 }
 
 .project p {
-    font-size: 0.95rem; /* Slightly smaller description text */
-    color: #bbb; /* Lighter color for description */
-    margin-bottom: 1rem; /* Space below description */
+    font-size: 0.95rem;
+    color: #bbb;
+    margin-bottom: 1rem;
 }
 
-.project .github-link { /* Target specifically the github-link within a project */
-    font-size: 0.9rem; /* Smaller button text */
-    padding: 5px 10px; /* Smaller button padding */
+.project .github-link {
+    font-size: 0.9rem;
+    padding: 5px 10px;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 0.8rem; /* Reduced padding */
+    padding: 0.8rem;
     background-color: rgba(0, 0, 0, 0.5);
     color: #ccc;
-    font-size: 0.9rem; /* Smaller footer text */
-    margin-top: 3rem; /* More space above footer */
+    font-size: 0.9rem;
+    margin-top: 3rem;
 }
 
-/* Hover Effects (Adjusted slightly for scale) */
-
-/* 1. Hover on Name */
+/* Hover Effects (kept from previous version) */
 h1:hover {
     color: #38bdf8;
-    text-shadow: 0 0 8px #38bdf8; /* Slightly less intense shadow */
-    transform: scale(1.03); /* Slightly less pronounced scale */
+    text-shadow: 0 0 8px #38bdf8;
+    transform: scale(1.03);
     transition: all 0.3s ease;
 }
 
-/* 2. Hover on Links (Global and header links) */
 .links a:hover {
     color: #ffffff;
-    text-shadow: 0 0 6px #38bdf8; /* Slightly less intense shadow */
-    transform: scale(1.03); /* Slightly less pronounced scale */
+    text-shadow: 0 0 6px #38bdf8;
+    transform: scale(1.03);
 }
 
-/* 3. Hover on Skills */
 .skills li {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .skills li:hover {
-    transform: scale(1.05); /* Slightly less pronounced scale */
-    box-shadow: 0 0 8px #38bdf8; /* Slightly less intense shadow */
+    transform: scale(1.05);
+    box-shadow: 0 0 8px #38bdf8;
     background-color: #0f172a;
 }
 
-/* 4. Hover on Project Titles */
 .project h3:hover {
     color: #0ea5e9;
-    text-shadow: 0 0 8px #0ea5e9; /* Slightly less intense shadow */
-    transform: scale(1.02); /* Slightly less pronounced scale */
+    text-shadow: 0 0 8px #0ea5e9;
+    transform: scale(1.02);
     transition: all 0.3s ease;
 }
 
-/* 5. Project Box Hover Effect */
 .project:hover {
-    transform: translateY(-5px); /* Lift slightly on hover */
-    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5), 0 0 15px rgba(56, 189, 248, 0.4); /* More pronounced glow */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5), 0 0 15px rgba(56, 189, 248, 0.4);
 }
 
-/* 6. Footer Hover Effect */
 footer:hover {
     background-color: rgba(0, 0, 0, 0.7);
     color: #ffffff;
     transition: all 0.3s ease;
 }
 
-/* GitHub Link Button Specifics */
 .github-link {
     display: inline-block;
-    margin-top: 0.8rem; /* Adjusted top margin for more separation */
+    margin-top: 0.8rem;
     color: #38bdf8;
     text-decoration: none;
     font-weight: bold;
     border: 1px solid #38bdf8;
-    padding: 0.4rem 0.9rem; /* Reduced padding */
+    padding: 0.4rem 0.9rem;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
@@ -205,53 +213,46 @@ footer:hover {
 .github-link:hover {
     background-color: #38bdf8;
     color: #0f172a;
-    box-shadow: 0 0 8px #38bdf8; /* Slightly less intense shadow */
-    transform: scale(1.03); /* Slightly less pronounced scale */
+    box-shadow: 0 0 8px #38bdf8;
+    transform: scale(1.03);
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    /* Adjustments for h1 and p are already handled by margin: 0; */
     h1 {
         font-size: 1.8rem;
     }
-
     header p {
         font-size: 0.9rem;
+        max-width: 90%; /* Allow it to take more width on smaller screens */
     }
-
     .links a {
         font-size: 0.85rem;
-        margin: 0 8px;
     }
 
     .skills, .projects {
         padding: 0.8rem;
         margin: 1.5rem auto;
-        max-width: 90%; /* Allow sections to take more width on smaller screens */
+        max-width: 90%;
     }
-
     .skills h2, .projects h2 {
         font-size: 1.6rem;
     }
-
     .skills li {
         padding: 0.3rem 0.7rem;
         font-size: 0.8rem;
     }
-
     .project h3 {
         font-size: 1.2rem;
     }
-
     .project p {
         font-size: 0.85rem;
     }
-
     .github-link {
         padding: 0.3rem 0.8rem;
         font-size: 0.8rem;
     }
-
     footer {
         font-size: 0.8rem;
         padding: 0.6rem;
@@ -262,33 +263,26 @@ footer:hover {
     h1 {
         font-size: 1.5rem;
     }
-
     header p {
         font-size: 0.8rem;
     }
-
     .links {
-        display: flex; /* Make links stack or wrap better */
-        flex-direction: column;
+        flex-direction: column; /* Stack links vertically on small screens */
         gap: 0.5rem;
     }
     .links a {
-        margin: 0 auto; /* Center stacked links */
+        margin: 0 auto;
     }
-
     .skills ul {
-        justify-content: center;
+        justify-content: flex-start; /* Align skills to start on very small screens */
     }
-
     .skills h2, .projects h2 {
         font-size: 1.4rem;
         margin-bottom: 1rem;
     }
-
     .project {
         padding: 0.8rem;
     }
-
     .project h3 {
         font-size: 1.1rem;
     }
