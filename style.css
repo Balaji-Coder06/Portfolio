@@ -9,7 +9,7 @@ body {
     color: #e0e0e0;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     line-height: 1.6;
-    font-size: 16px;
+    font-size: 16px; /* Base font size for 'rem' calculations */
 }
 
 /* Overlay for background dimming */
@@ -27,51 +27,59 @@ body {
 header {
     backdrop-filter: blur(8px);
     background-color: rgba(0, 0, 0, 0.55);
-    text-align: center; /* Centers block elements like h1, p, and the links div */
+    text-align: center; /* This centers block elements like h1, p, and the links div */
     padding: 1.5rem 1rem;
     border-bottom: 1px solid #333;
-    /* Removed flex properties from header as we want them to stack naturally */
 }
 
-/* NEW: Remove margins to bring them closer */
+/* S Balaji (h1) */
 h1 {
     font-size: 2.2rem;
-    margin-top: 0;      /* Remove top margin */
-    margin-bottom: 0;   /* Remove bottom margin */
-    line-height: 1.2;   /* Adjust line-height to fine-tune spacing */
+    margin-top: 0;    /* Remove default top margin */
+    margin-bottom: 0; /* Remove default bottom margin */
+    line-height: 1.2; /* Tighter line height for the text itself */
 }
 
-/* NEW: Remove margins and set max-width */
+/* Aspiring Software Engineer... (p) */
 header p {
     font-size: 1rem;
     color: #9ca3af;
-    margin-top: 0;      /* Remove top margin */
-    margin-bottom: 1.5rem; /* Only margin-bottom to create space for links */
-    max-width: 600px; /* Constrain width for better readability on large screens */
-    margin-left: auto;  /* Center horizontally */
-    margin-right: auto; /* Center horizontally */
-    line-height: 1.2;   /* Adjust line-height to fine-tune spacing */
+    margin-top: 0;       /* Remove default top margin to bring it close to h1 */
+    margin-bottom: 1.5rem; /* Add consistent space AFTER this paragraph for links */
+    max-width: 600px;    /* Keeps text from being too long on wide screens */
+    margin-left: auto;   /* Centers the paragraph itself */
+    margin-right: auto;  /* Centers the paragraph itself */
+    line-height: 1.2;    /* Tighter line height for the text itself */
 }
 
-/* Links Container */
+/* GitHub and LinkedIn Links */
 .links {
-    /* Removed margin-top as header p now handles spacing below text */
+    /* Use flexbox to keep links on one line and center them */
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: center; /* Centers items horizontally */
+    gap: 20px; /* Space between links */
+    /* margin-top is handled by header p's margin-bottom now */
+    margin-bottom: 1rem; /* Add some space below the links container if needed */
 }
 
 .links a {
-    margin: 0; /* Ensure no external margins on links themselves */
+    margin: 0; /* Remove any individual link margins, gap handles it */
     color: #38bdf8;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 0.95rem;
+    display: inline-block; /* Ensure they behave like blocks for padding/sizing, but stay inline */
+    padding: 0.5em 1em; /* Add some padding to make buttons look better */
+    border: 1px solid #38bdf8;
+    border-radius: 8px;
 }
 .links a:hover {
     color: #ffffff;
+    background-color: #38bdf8; /* Add background on hover for buttons */
+    box-shadow: 0 0 10px #38bdf8; /* Add glow on hover */
 }
+
 
 /* Common Section Styles (Skills & Projects) */
 .skills, .projects {
@@ -92,18 +100,16 @@ header p {
     text-shadow: 0 0 8px #38bdf8;
 }
 
-/* Skills Section Specifics */
+/* All Skills on one line (wrapping if needed) */
 .skills ul {
     display: flex;
-    /* NO flex-wrap: wrap; to keep them on one line */
-    justify-content: center;
+    flex-wrap: wrap; /* NEW CHANGE: Allows items to wrap to the next line */
+    justify-content: center; /* Centers the items if they all fit or are on a new line */
     gap: 8px;
     list-style: none;
     padding: 0;
     margin: 0;
-    overflow-x: auto; /* Allow horizontal scrolling if content overflows */
-    white-space: nowrap; /* Force all list items to stay on one line */
-    padding-bottom: 10px; /* Add some padding if scrollbar appears */
+    /* Removed: overflow-x: auto;, white-space: nowrap;, and scrollbar styling */
 }
 
 .skills li {
@@ -113,7 +119,13 @@ header p {
     border-radius: 8px;
     box-shadow: 0 0 4px #0ea5e9;
     font-size: 0.9rem;
-    flex-shrink: 0; /* Prevent items from shrinking */
+    flex-shrink: 0; /* Prevents items from shrinking, maintaining their size */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.skills li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px #38bdf8;
+    background-color: #0f172a;
 }
 
 /* Projects Section Specifics */
@@ -143,8 +155,21 @@ header p {
 }
 
 .project .github-link {
-    font-size: 0.9rem;
-    padding: 5px 10px;
+    display: inline-block; /* Ensure this is set for correct button behavior */
+    margin-top: 0.8rem;
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #38bdf8;
+    padding: 0.4rem 0.9rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.project .github-link:hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+    box-shadow: 0 0 8px #38bdf8;
+    transform: scale(1.03);
 }
 
 /* Footer */
@@ -155,29 +180,19 @@ footer {
     color: #ccc;
     font-size: 0.9rem;
     margin-top: 3rem;
+    transition: all 0.3s ease; /* For footer hover effect */
+}
+footer:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
 }
 
-/* Hover Effects (kept from previous version) */
+/* General Hover Effects (retained from previous) */
 h1:hover {
     color: #38bdf8;
     text-shadow: 0 0 8px #38bdf8;
     transform: scale(1.03);
     transition: all 0.3s ease;
-}
-
-.links a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 6px #38bdf8;
-    transform: scale(1.03);
-}
-
-.skills li {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.skills li:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 8px #38bdf8;
-    background-color: #0f172a;
 }
 
 .project h3:hover {
@@ -192,34 +207,9 @@ h1:hover {
     box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5), 0 0 15px rgba(56, 189, 248, 0.4);
 }
 
-footer:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    transition: all 0.3s ease;
-}
-
-.github-link {
-    display: inline-block;
-    margin-top: 0.8rem;
-    color: #38bdf8;
-    text-decoration: none;
-    font-weight: bold;
-    border: 1px solid #38bdf8;
-    padding: 0.4rem 0.9rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.github-link:hover {
-    background-color: #38bdf8;
-    color: #0f172a;
-    box-shadow: 0 0 8px #38bdf8;
-    transform: scale(1.03);
-}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    /* Adjustments for h1 and p are already handled by margin: 0; */
     h1 {
         font-size: 1.8rem;
     }
@@ -229,8 +219,8 @@ footer:hover {
     }
     .links a {
         font-size: 0.85rem;
+        padding: 0.4em 0.8em;
     }
-
     .skills, .projects {
         padding: 0.8rem;
         margin: 1.5rem auto;
@@ -249,7 +239,7 @@ footer:hover {
     .project p {
         font-size: 0.85rem;
     }
-    .github-link {
+    .project .github-link {
         padding: 0.3rem 0.8rem;
         font-size: 0.8rem;
     }
@@ -265,16 +255,18 @@ footer:hover {
     }
     header p {
         font-size: 0.8rem;
+        max-width: 95%; /* Even more width on very small screens */
     }
     .links {
-        flex-direction: column; /* Stack links vertically on small screens */
+        flex-direction: column; /* Stack links vertically on very small screens */
         gap: 0.5rem;
     }
     .links a {
-        margin: 0 auto;
+        width: fit-content; /* Make button width fit content when stacked */
+        margin: 0 auto; /* Center individual buttons when stacked */
     }
     .skills ul {
-        justify-content: flex-start; /* Align skills to start on very small screens */
+        justify-content: center; /* Keep skills centered even when wrapping on small screens */
     }
     .skills h2, .projects h2 {
         font-size: 1.4rem;
