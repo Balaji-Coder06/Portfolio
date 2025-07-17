@@ -2,7 +2,7 @@
 
 /* Basic Resets & Global Styles */
 body {
-    cursor: url('cursors\Rainbow.ani'), auto;
+    cursor: url(https://ani.cursors-4u.net/cursors/cur-12/cur1103.ani), url(https://ani.cursors-4u.net/cursors/cur-12/cur1103.png), auto !important;
     margin: 0;
     font-family: 'Orbitron', sans-serif;
     background: url('https://manybackgrounds.com/images/hd/cool-dark-neon-blue-circle-sz6fk2b7hiiyjekx.jpg') no-repeat center center fixed;
