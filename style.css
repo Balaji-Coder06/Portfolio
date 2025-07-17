@@ -2,6 +2,7 @@
 
 /* Basic Resets & Global Styles */
 body {
+    cursor: url('cursors\Rainbow.ani'), auto;
     margin: 0;
     font-family: 'Orbitron', sans-serif;
     background: url('https://manybackgrounds.com/images/hd/cool-dark-neon-blue-circle-sz6fk2b7hiiyjekx.jpg') no-repeat center center fixed;
@@ -10,7 +11,6 @@ body {
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     line-height: 1.6;
     font-size: 16px; /* Base font size for 'rem' calculations */
-    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=3386);
 }
 
 /* Overlay for background dimming */
