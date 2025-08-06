@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — S Balaji</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html">S Balaji</a>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-user"></i> About</a>
+        <a href="skills.html"><i class="fas fa-code"></i> Skills</a>
+        <a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+      </div>
+
+      <div class="section-body">
+        <div class="projects-grid">
+          <article class="card">
+            <div class="card-top">
+              <div class="card-img" aria-hidden></div>
+            </div>
+            <div class="card-body">
+              <h3>Sign Language Translator</h3>
+              <p>Real-time translation of hand signs to voice using Python, OpenCV, and MediaPipe.</p>
+              <div class="tags">Python · OpenCV · MediaPipe</div>
+              <div class="card-actions">
+                <a class="link-btn" href="https://github.com/Balaji-Coder06/Sign_language_translator" target="_blank" rel="noopener">View on
+                  GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="card-img" aria-hidden></div>
+            </div>
+            <div class="card-body">
+              <h3>Gesture-Controlled YouTube Player</h3>
+              <p>Control YouTube playback (play/pause/seek) using MediaPipe hand gestures and OpenCV.</p>
+              <div class="tags">Python · OpenCV · MediaPipe</div>
+              <div class="card-actions">
+                <a class="link-btn" href="https://github.com/Balaji-Coder06/YT_Gesture_Control" target="_blank" rel="noopener">View on
+                  GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="card-img" aria-hidden></div>
+            </div>
+            <div class="card-body">
+              <h3>Expense Tracker</h3>
+              <p>Simple expense manager with category-wise tracking and summarised view.</p>
+              <div class="tags">HTML · CSS · JavaScript</div>
+              <div class="card-actions">
+                <a class="link-btn" href="https://github.com/Balaji-Coder06/Expense_Tracker" target="_blank" rel="noopener">View on
+                  GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> S Balaji · Aspiring Software Engineer</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('navToggle');
+    navToggle.addEventListener('click', () => nav.classList.toggle('open'));
+  </script>
+</body>
+
+</html>

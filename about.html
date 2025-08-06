@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>S Balaji — Portfolio</title>
-  <meta name="description" content="S Balaji — Aspiring Software Engineer. C, Python, Web Dev, OpenCV, MediaPipe.">
+  <title>About — S Balaji</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -21,36 +22,22 @@
         <a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a>
         <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
       </nav>
+
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
     </div>
   </header>
 
   <main>
-    <section id="hero" class="hero">
+    <section class="section about">
       <div class="container">
-        <h1 class="hero-title">Hi! I am Balaji</h1>
+        <h2 class="section-title">About</h2>
       </div>
-
-      <div class="hero-body">
-        <p class="hero-sub">Aspiring Software Engineer <span class="muted">| Just a cool silent guy with skills</span></p>
-        
-        <div class="hero-cta">
-          <a class="btn" href="projects.html">View My Work</a>
-          <a class="btn" href="contact.html">Contact Me</a>
-        </div>
-
-        <div class="hero-meta">
-          <span>Core: C · Python · HTML · CSS</span>
-        </div>
-
-        <div class="social-links">
-          <a href="https://github.com/Balaji-Coder06" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/s-balaji06/" target="_blank">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-        </div>
+      <div class="section-body">
+        <p class="lead">
+          I build practical projects that blend computer vision, web development, and embedded systems.
+          I enjoy solving problems with C and Python and bringing ideas to life — whether it’s a real-time sign language
+          translator or gesture-controlled systems.
+        </p>
       </div>
     </section>
 
@@ -64,9 +51,13 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     const nav = document.getElementById('nav');
     const navToggle = document.getElementById('navToggle');
-    navToggle.addEventListener('click', () => nav.classList.toggle('open'));
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
   </script>
 </body>
+
 </html>
