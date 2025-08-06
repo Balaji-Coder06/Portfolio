@@ -191,31 +191,28 @@ main {
 }
 
 .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 14px;
-  justify-content: center;
-  max-width: 600px;
 }
 
 .skills-grid li {
-  background: var(--glass);
-  padding: 12px;
-  border-radius: 10px;
+  background: #1a1a1a;
+  color: #f55;
+  border: 1px solid #333;
+  border-radius: 8px;
   text-align: center;
-  color: var(--muted);
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.02);
-  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  padding: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .skills-grid li:hover {
-  transform: scale(1.05);
-  border-color: var(--accent);
-  color: var(--accent);
+  background-color: #d33;
+  color: white;
 }
 
 .projects-grid {
