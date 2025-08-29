@@ -1,20 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <link rel="icon" type="image" href="images\3.png">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects — S Balaji</title>
+  <title>Soon</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
-</head>
 
+</head>
 <body>
-  <header class="site-header">
+    <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
         <a href="index.html">My Portfolio</a>
@@ -30,43 +29,23 @@
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
     </div>
   </header>
-
   <main>
-    <section class="section projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-      </div>
-
-      <div class="section-body">
-        <div class="projects-grid">
-          
-          <article class="card">
-            <div class="card-top">
-              <div class="card-img" aria-hidden></div>
-            </div>
-            <div class="card-body">
-              <h3>Gesture-Controlled YouTube Player</h3>
-              <p>Control YouTube playback (play/pause/seek) using MediaPipe hand gestures and OpenCV.</p>
-              <div class="tags">Python · OpenCV · MediaPipe</div>
-              <div class="card-actions">
-                <a class="link-btn" href="https://github.com/Balaji-Coder06/YT_Gesture_Control" target="_blank" rel="noopener">View on
-                  GitHub</a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
+    <h1 class="head1">Coming Soon !</h1>
+    <div id="loading"></div>
+  </div>
   </main>
-
   <footer class="site-footer">
     <div class="container">
       <p>© 2025 · S Balaji | Debugging life one line at a time.</p>
     </div>
   </footer>
-
+  <script>
+    const loading = document.getElementById("loading");
+    let dots = 0;
+    setInterval(() => {
+      dots = (dots + 1) % 6; // cycle 0 → 3
+      loading.textContent = "" + ".".repeat(dots);
+    }, 500);
+  </script>
 </body>
-
 </html>

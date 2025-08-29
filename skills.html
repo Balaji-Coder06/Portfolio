@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" type="image" href="images\3.png">
+  <link rel="icon" type="image" href="images/3.png">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Skills Page</title>
+  <title>Skills — S Balaji</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -20,8 +22,8 @@
       <nav class="nav" id="nav">
         <a href="index.html"><i class="fas fa-home"></i> Home</a>
         <a href="about.html"><i class="fas fa-user"></i> About</a>
-        <a href="skills.html"><i class="fas fa-code"></i> Skills</a>
-        <a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a>
+        <a href="skills.html" class="active"><i class="fas fa-code"></i> Skills</a>
+        <a href="comingsoon.html"><i class="fas fa-folder-open"></i> Projects</a>
         <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
@@ -29,39 +31,93 @@
   </header>
 
   <main>
-    <section class="section skills">
+    <section id="skills" class="skills">
       <div class="container">
         <h2 class="section-title">Skills</h2>
-      </div>
+        <div class="skills-grid">
 
-      <div class="section-body">
-        <ul class="skills-grid">
-          <li>C</li>
-          <li>Python</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>OpenCV</li>
-          <li>MediaPipe</li>
-          <li>Git & GitHub</li>
-        </ul>
+          <div class="skill-item" data-width="95%">
+            <div class="skill-icon"><i class="fab fa-c"></i></div>
+            <h3>C / C++</h3>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-percentage">95%</span>
+          </div>
+
+          <div class="skill-item" data-width="70%">
+            <div class="skill-icon"><i class="fab fa-python"></i></div>
+            <h3>Python</h3>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-percentage">70%</span>
+          </div>
+
+          <div class="skill-item" data-width="90%">
+            <div class="skill-icon"><i class="fab fa-github"></i></div>
+            <h3>Git & Github</h3>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-percentage">90%</span>
+          </div>
+
+          <div class="skill-item" data-width="20%">
+            <div class="skill-icon"><i class="fab fa-java"></i></div>
+            <h3>Java</h3>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-percentage">20%</span>
+          </div>
+
+          <div class="skill-item" data-width="95%">
+            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+            <h3>HTML</h3>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-percentage">95%</span>
+          </div>
+
+          <div class="skill-item" data-width="90%">
+            <div class="skill-icon"><i class="fab fa-css3"></i></div>
+            <h3>CSS</h3>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-percentage">90%</span>
+          </div>
+
+          <div class="skill-item" data-width="10%">
+            <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+            <h3>JavaScript</h3>
+            <div class="skill-bar"><div class="skill-progress"></div></div>
+            <span class="skill-percentage">10%</span>
+          </div>
+
+        </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> S Balaji · Aspiring Software Engineer</p>
+      <p>© 2025 · S Balaji | Debugging life one line at a time.</p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
     const nav = document.getElementById('nav');
     const navToggle = document.getElementById('navToggle');
     navToggle.addEventListener('click', () => nav.classList.toggle('open'));
-  </script>
-</body>
+    const skillItems = document.querySelectorAll(".skill-item");
 
+    function showSkillsOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      skillItems.forEach((item, i) => {
+        const itemTop = item.getBoundingClientRect().top;
+        if (itemTop < triggerBottom) {
+          const progress = item.querySelector(".skill-progress");
+          const targetWidth = item.getAttribute("data-width");
+          setTimeout(() => {
+            progress.style.width = targetWidth;
+          }, i * 150);
+        }
+      });
+    }
+    window.addEventListener("scroll", showSkillsOnScroll);
+    window.addEventListener("load", showSkillsOnScroll);
+  </script>
+
+</body>
 </html>

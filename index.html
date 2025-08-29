@@ -8,6 +8,9 @@
   <meta name="description" content="S Balaji — Aspiring Software Engineer. C, Python, Web Dev, OpenCV, MediaPipe.">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="site-header">
@@ -19,7 +22,7 @@
         <a href="index.html"><i class="fas fa-home"></i> Home</a>
         <a href="about.html"><i class="fas fa-user"></i> About</a>
         <a href="skills.html"><i class="fas fa-code"></i> Skills</a>
-        <a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a>
+        <a href="comingsoon.html"><i class="fas fa-folder-open"></i> Projects</a>
         <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
@@ -29,7 +32,7 @@
   <main>
     <section id="hero" class="hero">
       <div class="container">
-        <h1 style="color:#FFFFFF;" class="hero-title">Hi! I am Balaji</h1>
+        <h1 class="hero-title">Hi! I am Balaji</h1>
       </div>
 
       <div class="hero-body">
@@ -41,7 +44,7 @@
         </div>
 
         <div class="hero-meta">
-          <span style="font-size: 18px;">Core: C · Python · HTML · CSS</span>
+          <span>Core: C · Python · HTML · CSS</span>
         </div>
 
         <div class="social-links">
@@ -59,15 +62,9 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> S Balaji · Aspiring Software Engineer</p>
+      <p>© 2025 · S Balaji | Debugging life one line at a time.</p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const nav = document.getElementById('nav');
-    const navToggle = document.getElementById('navToggle');
-    navToggle.addEventListener('click', () => nav.classList.toggle('open'));
-  </script>
 </body>
 </html>
