@@ -147,7 +147,7 @@ main { flex: 1; }
 }
 
 .section {
-  padding: 120px 0;
+  padding: 100px 0;
 }
 
 .section-body {
@@ -322,7 +322,6 @@ main { flex: 1; }
 
 .site-footer {
   padding: 18px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.02);
   text-align: center;
   color: #bbb;
 }
