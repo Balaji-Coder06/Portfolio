@@ -97,27 +97,33 @@
   </footer>
 
   <script>
-    const nav = document.getElementById('nav');
-    const navToggle = document.getElementById('navToggle');
-    navToggle.addEventListener('click', () => nav.classList.toggle('open'));
-    const skillItems = document.querySelectorAll(".skill-item");
+  const nav = document.getElementById('nav');
+  const navToggle = document.getElementById('navToggle');
 
-    function showSkillsOnScroll() {
-      const triggerBottom = window.innerHeight * 0.85;
-      skillItems.forEach((item, i) => {
-        const itemTop = item.getBoundingClientRect().top;
-        if (itemTop < triggerBottom) {
-          const progress = item.querySelector(".skill-progress");
-          const targetWidth = item.getAttribute("data-width");
-          setTimeout(() => {
-            progress.style.width = targetWidth;
-          }, i * 150);
-        }
-      });
-    }
-    window.addEventListener("scroll", showSkillsOnScroll);
-    window.addEventListener("load", showSkillsOnScroll);
-  </script>
+  navToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+
+  const skillItems = document.querySelectorAll(".skill-item");
+
+  function showSkillsOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+    skillItems.forEach((item, i) => {
+      const itemTop = item.getBoundingClientRect().top;
+      if (itemTop < triggerBottom) {
+        const progress = item.querySelector(".skill-progress");
+        const targetWidth = item.getAttribute("data-width");
+        setTimeout(() => {
+          progress.style.width = targetWidth;
+        }, i * 150);
+      }
+    });
+  }
+
+  window.addEventListener("scroll", showSkillsOnScroll);
+  window.addEventListener("load", showSkillsOnScroll);
+</script>
+
 
 </body>
 </html>
