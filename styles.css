@@ -80,8 +80,13 @@ main { flex: 1; }
 }
 
 .hero {
-  padding: 235px 0 70px;
+  padding: 170px 0 70px;
   text-align: center;
+}
+
+.name{
+  color: #d00000;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
 }
 
 .hero-title {
@@ -167,14 +172,15 @@ main { flex: 1; }
 
 .lead {
   color: #bbb;
-  max-width: 900px;
+  max-width: 600px;
   margin: 0 auto;
   font-size: clamp(25.5px, 2vw, 18px);
+  text-align: center;
 }
 
 .skills {
     padding: 80px 0;
-    height: 89vh;
+    min-height: 89vh;
     position: relative;
 }
 
