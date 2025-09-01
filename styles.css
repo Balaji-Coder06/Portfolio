@@ -24,7 +24,7 @@ body {
   flex-direction: column;
   font-family: "Comfortaa", sans-serif;
   color: #e6eef6;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/BG.jpg");
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("images/BG.jpg");
   background-size: cover;
 }
 
